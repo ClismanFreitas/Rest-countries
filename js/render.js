@@ -3,10 +3,10 @@ const pais = document.querySelector(".paises")
 
 export const renderizar = async(paises) => {
     const filtrado = paises.slice(0,8)
-    pais.innerHTML = filtrado.map(p => `
+    const inicio = pais.innerHTML = filtrado.map(p => `
         <div class="pais" data-nome="${p.name.common}">
             <img src=${p.flags.png} alt="${p.name.common}" width="100"/>
-            <div class="fuba">
+            <div class="details">
                 <h3>${p.name.common}</h3>
                 <p>Population: ${p.population.toLocaleString("pt-BR")}</p>
                 <p>Regiao: ${p.region}</p>
@@ -14,5 +14,5 @@ export const renderizar = async(paises) => {
             </div>
         </div>
     `).join("")
-    detalhes()
+    detalhes(inicio)
 }
