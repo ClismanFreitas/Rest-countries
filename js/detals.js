@@ -67,7 +67,7 @@ export const detalhes = (inicio) => {
                                 
                              </p>
                         </div>
-                        <div class="b">
+                        <div>
                             <p>
                                 <b>Top Level Domain:</b>
                                 <span>
