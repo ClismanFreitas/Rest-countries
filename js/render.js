@@ -1,7 +1,17 @@
 import { detalhes } from "./detals.js"
 const pais = document.querySelector(".paises")
+const botao = document.querySelector(".filter")
+const elementos = document.querySelector(".filter-list")
 
 export const renderizar = async(paises) => {
+    botao.addEventListener("click",() => {
+        const botaoEstaAberto = elementos.classList.contains("esconder")
+        if(botaoEstaAberto){
+            elementos.classList.remove("esconder")
+        } else {
+            elementos.classList.add("esconder")
+        }
+    })
     const filtrado = paises.slice(0,8)
     const inicio = pais.innerHTML = filtrado.map(p => `
         <div class="pais" data-nome="${p.name.common}">

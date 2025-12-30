@@ -8,7 +8,7 @@ body {
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.459);
 }
 
-.informacoes{
+.informacoes {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,7 +23,7 @@ body {
     margin: 0 auto;
 }
 
-h1 {
+.title {
     font-size: 1.5rem;
     color: white;
 }
@@ -34,7 +34,7 @@ h1 {
     font-size: 30px;
 }
 
-.search{
+.search {
     background-color: hsl(209, 23%, 22%);
     border: none;
     border-radius: 6px;
@@ -50,7 +50,7 @@ h1 {
     border: 1px solid #ffffff;
 }
 
-.search input{
+.search input {
     width: 300px;
     padding: 10px 20px;
     border-radius: 6px;
@@ -74,18 +74,57 @@ h1 {
     margin: 0 auto;
 }
 
-#region {
+.filter {
+    position: relative;
     background-color: hsl(209, 23%, 22%);
     border: none;
     color: white;
-    padding: 15px 40px;
+    width: 200px;
+    padding: 15px 15px;
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.459);
     border-radius: 6px;
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+    transition: .3s ease-in;
+}
+
+.filter:hover{
+    box-shadow: 0px 0px 9px 2px white;
+}
+
+.filter-btn{
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-list {
+    position: absolute;
+    background-color: hsl(209, 23%, 22%);
+    top: 110%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.459);
+    border-radius: 6px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.filter-list li {
+    padding: 10px 20px;
+    transition: 0,3s ease-in;
+}
+
+li:hover{
+    box-shadow: 0px 0px 9px 2px white;
+    border-radius: 6px;
+    font-size: 1.1em;
 }
 
 
 .paises {
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
@@ -142,7 +181,8 @@ h3 {
 p {
     font-size: .8rem;
 }
-.btn-back{
+
+.btn-back {
     background-color: hsl(209, 23%, 22%);
     border: none;
     border-radius: 6px;
@@ -157,11 +197,42 @@ p {
     transition: .2s ease-out;
 }
 
-.btn-back:hover{
+.btn-back:hover {
     box-shadow: 0px 0px 8px 0px white;
     padding: 7px 55px;
 }
 
-.esconder{
+.esconder {
     display: none;
+}
+
+.pSelecionado {
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    background-color: aqua;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.container h1 {
+    color: white;
+}
+
+.informacaoPais{
+    display: flex;
+    align-items: center;
+}
+
+
+.a{
+    background-color: rgb(170, 165, 173);
+}
+
+.b{
+    background-color: red;
 }

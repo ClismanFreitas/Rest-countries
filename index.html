@@ -18,7 +18,7 @@
 <body>
     <header class="cabecalho">
         <div class="informacoes">
-            <h1>Where in the world?</h1>
+            <h1 class="title">Where in the world?</h1>
             <div class="tema">ABC</div>
         </div>
     </header>
@@ -32,14 +32,19 @@
                 <i data-lucide="arrow-left"></i>
                 Back
             </button>
-            <select name="region" id="region">
-                <option value="" disable selected hidden> Filter by Region</option>
-                <option value="Africa">Africa</option>
-                <option value="America">America</option>
-                <option value="Asia">Asia</option>
-                <option value="Europe">Europe</option>
-                <option value="Oceania">Oceania</option>
-            </select>
+            <div class="filter">
+                <div class="filter-btn">
+                    Filter by Region
+                    <i data-lucide="chevron-down"></i>
+                </div>
+                <ul class="filter-list esconder">
+                    <li>Africa</li>
+                    <li>America</li>
+                    <li>Asia</li>
+                    <li>Europe</li>
+                    <li>Oceania</li>
+                </ul>
+            </div>
         </div>
         <div class="paises"></div>
     </main>
