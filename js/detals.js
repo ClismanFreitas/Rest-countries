@@ -24,7 +24,7 @@ export const detalhes = (inicio) => {
                 const borderCountries = await response.json()
 
                 bordersHTML = borderCountries.map(country => `
-                    <span class="border-item">${country.name.common}</span>`).join("")
+                    <div class="border-item">${country.name.common}</div>`).join("")
             }
 
             if (!paisSelecionado) {
@@ -42,64 +42,68 @@ export const detalhes = (inicio) => {
                     </div>
                     
                     <article class="informacaoPais">
-                        <div class="infoEsquerda">
-                            <h1>${seleçao.name.common}</h1>
-                            <p>
-                                <b>Native Name:</b>
+                        <h1>${seleçao.name.common}</h1>
+                        <div class="info">
+                            <div class="infoEsquerda">
+                                <p>
+                                    <b>Native Name:</b>
+                                    <span>
+                                        ${Object.values(seleçao.name.nativeName)[0].official}
+                                    </span>
+                                </p>
+                                <p>
+                                    <b>Population:</b>
+                                    <span>
+                                        ${seleçao.population.toLocaleString("pt-BR")}
+                                    </span>
+                                </p>
+                                <p>
+                                    <b>Region:</b>
+                                    <span>
+                                        ${seleçao.region}
+                                    </span>
+                                </p>
+                                <p>
+                                    <b>Sub Region:</b>
+                                    <span>
+                                        ${seleçao.subregion}
+                                    </span>
+                                </p>
+                                <p>
+                                    <b>Capital:</b>
                                 <span>
-                                    ${Object.values(seleçao.name.nativeName)[0].official}
+                                    ${seleçao.capital}
                                 </span>
-                            </p>
-                            <p>
-                                <b>Population:</b>
-                                <span>
-                                    ${seleçao.population.toLocaleString("pt-BR")}
-                                </span>
-                            </p>
-                            <p>
-                                <b>Region:</b>
-                                <span>
-                                    ${seleçao.region}
-                                </span>
-                            </p>
-                            <p>
-                                <b>Sub Region:</b>
-                                <span>
-                                    ${seleçao.subregion}
-                                </span>
-                            </p>
-                            <p>
-                                <b>Capital:</b>
-                            <span>
-                                ${seleçao.capital}
-                            </span>
-                            </p>
-                            <div class="countries">
-                                <p><b>Border Countries:</b></p>
-                                <div class="border-list">
-                                    ${bordersHTML}
-                                </div>
+                                </p>
                             </div>
-                        </div>
-                        <div class="infoDireita">
+                            <div class="infoDireita">
+                                <p>
+                                    <b>Top Level Domain:</b>
+                                    <span>
+                                        ${seleçao.tld}
+                                    </span>
+                                </p>
+                                <p>
+                                    <b>Currencies:</b>
+                                    <span>
+                                        ${Object.values(seleçao.currencies)[0].name}
+                                    </span>
+                                </p>
+                                <p>
+                                    <b>Languages:</b>
+                                    <span>
+                                        ${Object.values(seleçao.languages)}
+                                    </span>
+                                </p>
+                            </div>
+                            </div>
+                        <div class="countries">
                             <p>
-                                <b>Top Level Domain:</b>
-                                <span>
-                                    ${seleçao.tld}
-                                </span>
+                                <b>Border Countries:</b>
                             </p>
-                            <p>
-                                <b>Currencies:</b>
-                                <span>
-                                    ${Object.values(seleçao.currencies)[0].name}
-                                </span>
-                            </p>
-                            <p>
-                                <b>Languages:</b>
-                                <span>
-                                    ${Object.values(seleçao.languages)}
-                                </span>
-                            </p>
+                            <div class="border-list">
+                                ${bordersHTML}
+                            </div>
                         </div>
                     </article>
                 </main>`

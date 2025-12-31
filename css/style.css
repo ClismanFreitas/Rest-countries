@@ -1,5 +1,6 @@
 body {
     background-color: var(--gray-200);
+    cursor: default;
 }
 
 .cabecalho {
@@ -44,8 +45,8 @@ body {
     color: var(--gray-300);
 }
 
-.tema img{
-   height: 15px;
+.tema img {
+    height: 15px;
 }
 
 .search {
@@ -102,12 +103,12 @@ body {
     cursor: pointer;
 }
 
-.filter:hover{
+.filter:hover {
     box-shadow: 0px 0px 8px 0px var(--gray-300);
     transition: .2s ease-in;
 }
 
-.filter-btn{
+.filter-btn {
     display: flex;
     justify-content: space-between;
 }
@@ -128,10 +129,10 @@ body {
 
 .filter-list li {
     padding: 10px 20px;
-    transition: 0,3s ease-in;
+    transition: 0, 3s ease-in;
 }
 
-li:hover{
+li:hover {
     box-shadow: 0px 0px 8px 0px var(--gray-300);
     border-radius: 6px;
     font-size: 1.1em;
@@ -197,7 +198,7 @@ p {
     font-weight: 500;
 }
 
-p span{
+p span {
     font-weight: 200;
 }
 
@@ -226,72 +227,94 @@ p span{
 }
 
 .pSelecionado {
-    background-color: blueviolet;
     display: flex;
     justify-content: center;
 }
 
 .container {
     display: flex;
-    background-color: aqua;
     width: 100%;
     max-width: 1440px;
     justify-content: space-between;
-
+    margin-top: 30px;
 }
 
 .container h1 {
     color: var(--gray-300);
+    margin-left: 30px;
 }
 
-.tema:hover{
+.tema:hover {
     box-shadow: 0px 0px 8px 0px var(--gray-300);
 }
 
-.imagem-detalhe{
+.imagem-detalhe {
     width: 40%;
 }
 
-.imagem-detalhe img{
-    width: 100%;
+.imagem-detalhe img {
+    width: 120%;
     height: 100%;
 }
 
 .informacaoPais {
     display: flex;
-    align-items: center;
-    background-color: rgb(130, 108, 151);
+    justify-content: center;
     width: 50%;
+    flex-direction: column;
 }
 
 .informacaoPais div p {
     color: var(--gray-300);
 }
 
-.infoEsquerda{
+.countries {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.info {
+    margin-top: 25px;
+    display: flex;
+    margin-left: 30px;
+    gap: 50px;
+}
+
+.infoEsquerda, .infoDireita{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    max-width: 60%;
-    height: 300px;
+    gap: 6px;
 }
 
 .countries {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateY(30px);
-  gap: 10px;
+    display: flex;
+    margin-left: 30px;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+.countries p {
+    white-space: nowrap;
 }
 
-.border-item{
+.border-item, .border {
+    margin: 5px 5px;
+    padding: 5px 15px;
+    border-radius: 6px;
     background-color: var(--gray-100);
     color: var(--gray-300);
+    font-size: .9rem;
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.459);
-    font-size: .8em;
-    padding: 5px 20px;
-    margin-left: 5px;
-    font-weight: 200;
 }
 
+.border-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 
+}
+
+.informacaoPais h1 {
+    color: var(--gray-300);
+}
