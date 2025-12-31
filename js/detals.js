@@ -7,17 +7,30 @@ const paisSelecionado = pais.classList.contains("pSelecionado")
 export const detalhes = (inicio) => {
     const cards = document.querySelectorAll(".pais")
     cards.forEach(card => {
-        card.addEventListener("click", async (e) => {
-            if (!paisSelecionado) {
-                pais.classList.remove("paises")
-                pais.classList.add("pSelecionado")
-            }
+        card.addEventListener("click", async () => {
             const selecionado = card.dataset.nome
             const urlDetail = await fetch(`https://restcountries.com/v3.1/name/${selecionado}`)
             const data = await urlDetail.json()
             console.log(data);
-            const borders = data[0].borders || []
-            console.log(borders);
+            const border = data[0].borders || []
+            let bordersHTML = ""
+
+            if (border.length === 0) {
+                bordersHTML = `<span class="border">None</span>`
+            } else {
+                const response = await fetch(
+                    `https://restcountries.com/v3.1/alpha?codes=${border.join(",")}`
+                )
+                const borderCountries = await response.json()
+
+                bordersHTML = borderCountries.map(country => `
+                    <span class="border-item">${country.name.common}</span>`).join("")
+            }
+
+            if (!paisSelecionado) {
+                pais.classList.remove("paises")
+                pais.classList.add("pSelecionado")
+            }
             search.classList.add("esconder")
             region.classList.add("esconder")
             btnBack.classList.remove("esconder")
@@ -27,8 +40,9 @@ export const detalhes = (inicio) => {
                     <div class="imagem-detalhe">
                         <img src="${seleçao.flags.png}"/>
                     </div>
-                    <div class="informacaoPais">
-                        <div>
+                    
+                    <article class="informacaoPais">
+                        <div class="infoEsquerda">
                             <h1>${seleçao.name.common}</h1>
                             <p>
                                 <b>Native Name:</b>
@@ -60,14 +74,14 @@ export const detalhes = (inicio) => {
                                 ${seleçao.capital}
                             </span>
                             </p>
-                            <p class="borderCountries">
-                                <b>Border Countries:</b>
-                                <span></span>
-                                <span></span>
-                                
-                             </p>
+                            <div class="countries">
+                                <p><b>Border Countries:</b></p>
+                                <div class="border-list">
+                                    ${bordersHTML}
+                                </div>
+                            </div>
                         </div>
-                        <div>
+                        <div class="infoDireita">
                             <p>
                                 <b>Top Level Domain:</b>
                                 <span>
@@ -87,7 +101,7 @@ export const detalhes = (inicio) => {
                                 </span>
                             </p>
                         </div>
-                    </div>
+                    </article>
                 </main>`
             })
 
@@ -100,8 +114,8 @@ export const detalhes = (inicio) => {
         region.classList.remove("esconder")
         btnBack.classList.add("esconder")
         if (!paisSelecionado) {
-            pais.classList.add("paises")
             pais.classList.remove("pSelecionado")
+            pais.classList.add("paises")
         }
         detalhes(inicio)
     })

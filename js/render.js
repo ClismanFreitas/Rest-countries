@@ -14,15 +14,15 @@ export const renderizar = async(paises) => {
     })
     const filtrado = paises.slice(0,8)
     const inicio = pais.innerHTML = filtrado.map(p => `
-        <div class="pais" data-nome="${p.name.common}">
+        <article class="pais" data-nome="${p.name.common}">
             <img src=${p.flags.png} alt="${p.name.common}" width="100"/>
             <div class="details">
                 <h3>${p.name.common}</h3>
-                <p>Population: ${p.population.toLocaleString("pt-BR")}</p>
-                <p>Regiao: ${p.region}</p>
-                <p>Capital: ${p.capital?.[0] || "N/A"}</p>
+                <p>Population: <span>${p.population.toLocaleString("pt-BR")}</span></p>
+                <p>Region: <span>${p.region}</span></p>
+                <p>Capital: <span>${p.capital?.[0] || "N/A"}</span></p>
             </div>
-        </div>
+        </article>
     `).join("")
     detalhes(inicio)
 }
