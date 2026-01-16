@@ -65,10 +65,19 @@ body {
     border: 1px solid var(--gray-300);
 }
 
+.search input:-webkit-autofill,
+.search input:-webkit-autofill:hover,
+.search input:-webkit-autofill:focus,
+.search input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--gray-100) inset !important;
+  box-shadow: 0 0 0 1000px var(--gray-100) inset !important;
+  -webkit-text-fill-color: var(--gray-300) !important;
+}
+
 .search input {
     width: 300px;
     padding: 10px 20px;
-    border-radius: 6px;
+
     background-color: var(--gray-100);
     border: none;
     outline: none;
@@ -318,3 +327,4 @@ p span {
 .informacaoPais h1 {
     color: var(--gray-300);
 }
+

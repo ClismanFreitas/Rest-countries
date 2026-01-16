@@ -29,7 +29,7 @@
         <div class="busca">
             <div class="search">
                 <i data-lucide="search"></i>
-                <input type="text" id="input" placeholder="Search for a country...">
+                <input type="text" value="" id="input" placeholder="Search for a country...">
             </div>
             <button class="btn-back esconder">
                 <i data-lucide="arrow-left"></i>
@@ -41,11 +41,11 @@
                     <i data-lucide="chevron-down"></i>
                 </div>
                 <ul class="filter-list esconder">
-                    <li>Africa</li>
-                    <li>America</li>
-                    <li>Asia</li>
-                    <li>Europe</li>
-                    <li>Oceania</li>
+                    <li value="Africa">Africa</li>
+                    <li value="America">America</li>
+                    <li value="Asia">Asia</li>
+                    <li value="Europe">Europe</li>
+                    <li value="Oceania">Oceania</li>
                 </ul>
             </div>
         </div>
@@ -54,6 +54,8 @@
     <script src="js/script.js" type="module"></script>
     <script src="js/theme.js" "></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/search.js" type="module"></script>
     <script>
         lucide.createIcons();
     </script>
