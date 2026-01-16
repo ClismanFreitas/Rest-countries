@@ -1,5 +1,6 @@
 const filtro = document.querySelectorAll("li")
 const pais = document.querySelector(".paises")
+import { detalhes } from "./detals.js"
 
 filtro.forEach(item => {
     item.addEventListener("click", async () => {
@@ -7,7 +8,7 @@ filtro.forEach(item => {
         const response = await fetch (`${url}`)
         const data = await response.json()
         const cortado = data.slice(0,8)
-        pais.innerHTML = cortado.map(p => `
+        const inicio = pais.innerHTML = cortado.map(p => `
         <article class="pais" data-nome="${p.name.common}">
             <img src=${p.flags.png} alt="${p.name.common}" width="100"/>
             <div class="details">
@@ -18,5 +19,6 @@ filtro.forEach(item => {
             </div>
         </article>
     `).join("")
+    detalhes(inicio)
     })
 })

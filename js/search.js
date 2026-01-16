@@ -1,13 +1,17 @@
 const searchFilter = document.querySelector('#input')
-const abacate = document.querySelector(".paises")
+const pais = document.querySelector(".paises")
+import { detalhes } from "./detals.js"
 
-searchFilter.addEventListener("input", async(event) => {
+searchFilter.addEventListener("input", async (event) => {
     const url = `https://restcountries.com/v3.1/name/${event.target.value}?fields=name,flags,population,region,capital`
-    const response = await fetch (`${url}`)
+    const response = await fetch(`${url}`)
     const data = await response.json()
-    console.log(data);
-    const filtrando = data.slice(0,8)
-    abacate.innerHTML = filtrando.map(p => `
+    searchPaises(data)
+})
+
+const searchPaises = (data) => {
+    const filtrando = data.slice(0, 8)
+    const inicio = pais.innerHTML = filtrando.map(p => `
         <article class="pais" data-nome="${p.name.common}">
             <img src=${p.flags.png} alt="${p.name.common}" width="100"/>
             <div class="details">
@@ -18,4 +22,6 @@ searchFilter.addEventListener("input", async(event) => {
             </div>
         </article>
     `).join("")
-})
+    detalhes(inicio)
+}
+
