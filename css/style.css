@@ -328,3 +328,122 @@ p span {
     color: var(--gray-300);
 }
 
+@media (max-width: 700px){
+    .paises{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .pais{
+        max-width: 300px;
+    }
+
+    .busca{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        width: 100%;
+    }
+
+    .search{
+        width: 90%;
+        padding: 5px;
+    }
+
+    #input{
+        width: 90%;
+    }
+
+    .informacoes{
+        width: 80%;
+    }
+
+    .title{
+        font-size: 1rem;
+    }
+
+    .tema{
+        font-size: .8rem;
+        width: 30%;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imagem-detalhe{
+        width: 100%;
+    }
+
+    .informacaoPais{
+        margin-top: 10px;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .info{
+        flex-direction: column;
+    }
+
+    .countries{
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .border-item{
+        margin: 5px 5px 5px 0px;
+    }
+
+    .cabecalho{
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px){
+    .paises{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tema{
+         white-space: nowrap;
+    }
+}
+
+@media (max-width: 850px){
+    .paises{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imagem-detalhe{
+        width: 90%;
+    }
+
+    .informacaoPais{
+        margin-top: 10px;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .info{
+        flex-direction: column;
+    }
+
+    .countries{
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .border-item{
+        margin: 5px 5px 5px 0px;
+    }
+}
